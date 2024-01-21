@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% block title %}Update Page{% endblock %} {% block
+content%} {% block head %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/update.css') }}"
+/>
+{% endblock%}
+
+<div class="welcome">
+  <span class="pic">{{user.first_name[0]|title}}</span>
+</div>
+
+<!-- ********************** ADD NOTES *************************-->
+
+<h2 class="edit_h2">
+  {{user.first_name|title}}, simply make your change and click 'Update'.
+</h2>
+<form id="update_form" action="/update/{{ note_to_update.id }}" method="POST">
+  <textarea
+    id="editableTextarea"
+    name="text_for_update"
+    id="note"
+    cols="50"
+    rows="3"
+  ></textarea>
+  <button id="upd_btn" type="submit">UPDATE</button>
+</form>
+<div id="img_div">
+  <img
+    class="img_back"
+    src="{{ url_for('static', filename='/image/wall02.png') }}"
+    alt="logo"
+  />
+  <img
+    class="img_back"
+    src="{{ url_for('static', filename='/image/wall01.png') }}"
+    alt="logo"
+  />
+</div>
+<!-- ********************** JavaScript of CONTENT PAGE *************************-->
+<script>
+  var textarea = document.getElementById("editableTextarea");
+
+  // Set the default text
+  var defaultText = "{{note_to_update.data}}";
+  textarea.value = defaultText;
+</script>
+<!--<script
+  type="text/javascript"
+  src="{{url_for('static',filename='js/update.js')}}"
+></script>-->
+
+{% endblock %}

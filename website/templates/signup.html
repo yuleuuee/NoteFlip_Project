@@ -1,0 +1,71 @@
+{% extends "base.html" %} {% block title %}Signup Page{% endblock %} 
+
+{% block head%}
+  
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/signup.css') }}"
+  />
+  {% endblock %}
+{% block content%}
+    <section class="sec1">
+      <form name="form" action="/signup" class="form" autocomplete="off" method="POST">
+        <h2>Create Account</h2>
+        <div class="inp 01">
+          <label for="email"></label>
+          <input
+            list="em_sugg"
+            type="text"
+            class="email"
+            id="email"
+            name="email"
+            placeholder="Enter Email id"
+          />
+          <datalist id="em_sugg">
+            <option value="yule@gmail.com"></option>
+            <option value="mint@gmail.com"></option>
+            <option value="ross@gmail.com"></option>
+          </datalist>
+        </div>
+        <div class="inp 02">
+          <label for="F_Name"></label>
+          <input
+            type="text"
+            class="first_name"
+            id="F_Name"
+            name="first_name"
+            placeholder="Enter First Name"
+          />
+        </div>
+        <div class="inp 03">
+          <label for="pass1"></label>
+          <input
+            type="password"
+            class="password1"
+            id="pass1"
+            name="password1"
+            placeholder="Enter Password"
+          />
+        </div>
+        <div class="inp 04">
+          <label for="pass2"></label>
+          <input
+            type="password"
+            class="password"
+            id="pass2"
+            name="password2"
+            placeholder="Confirm Password"
+          />
+        </div>
+        <br/>
+        <div class="submit ">
+          <button class="btn" type="submit">SUBMIT</button>
+        </div>
+        <div class="hav_acc">
+          <p>Already have an Account ? <a href="/login" id="login">Login</a></p>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
+{% endblock %}

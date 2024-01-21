@@ -1,0 +1,204 @@
+
+/* body{
+  background: linear-gradient(90deg,#cf9aff, #95c0ff);
+} */
+main{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    margin: 10px;
+    margin-bottom: 30px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+
+.sec1{
+  /* margin : top bottom | ring left */
+    margin: 50px 10px; 
+    padding: 40px  80px; 
+    /* border-radius: 40px; */
+    box-shadow: 0 0 30px 4px #cf9aff;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+section #login_form{
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+    margin: 5px;
+    padding: 30px;
+    border-radius: 20px;
+     /* background-color: white; */
+
+}
+
+h2{
+    width: 350px;
+    /* border: 2px solid gold; */
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    font-size:2.5em;
+
+}
+
+
+#login_form div{
+    /* border: 2px solid blue; */
+    margin: 5px;
+    padding: 5px;
+    margin-top: 15px;
+}
+
+  .inp input {
+    width: 100%;
+    height: 45px;
+    font-size: 18px;
+    text-align: left;
+    padding:18px;
+    box-shadow: 2px 4px 14px 10px rgba(166, 177, 236, 0.2);
+    border-radius: 30px;
+    border: transparent;
+    background-color: transparent;
+    color: black;
+  }
+
+
+  .inp input:focus {
+    outline: none;
+    box-shadow: 0 0 5px 0 rgba(0, 123, 255, 0.5); 
+  }
+
+  .inp input:hover{
+    box-shadow: 0 0 5px 0 rgba(0, 123, 255, 0.8);
+  }
+
+
+  .forgot{
+    float: right;
+    margin-right: 20px;
+  }
+
+  #btn {
+    border: transparent;
+    width: 100%;
+    height: 45px;
+    background-color: rgb(164, 164, 231);
+    margin-top: 10px;
+    border-radius: 30px;
+    font-size: 18px;
+    color: black;
+   
+  }
+  
+  #btn:hover {
+    background-color: #abbbed;
+    cursor: pointer;
+    /* color: grey; */
+    /* background-color: 0  0 5px 0 rgba(0, 123, 255, 0.5); */
+  }
+
+  .go_signup{
+    text-align: center;
+  }
+  
+#create ,#forgot_link{
+  color: rgb(125, 37, 125);
+
+}
+
+
+#create:hover, #forgot_link:hover{
+  color: blue;
+  cursor: pointer;
+}
+
+footer{
+  margin-top: 10px;
+}
+
+
+/* ***************** Forgot password *************** */
+
+
+#forgot_password{
+  display: none;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 20px;
+  box-shadow: 2px 4px 50px 5px rgba(16, 119, 222, 0.2);
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+}
+
+#forg_pass01,#forg_pass02, #forg_email{
+  width: 60%;
+    height: 35px;
+    font-size: 13px;
+    text-align: left;
+    padding:18px;
+    margin: 10px;
+    box-shadow: 2px 4px 50px 5px rgba(222, 81, 16, 0.2);
+    border-radius: 30px;
+    border: transparent;
+    background-color: transparent;
+    color: black;
+    outline: none;
+}
+
+#forg_btn{
+  border: transparent;
+  width: 40%;
+  height: 30px;
+  background-color: rgb(221, 190, 235);
+  padding: 5px 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  color: black;
+}
+
+#forg_btn:hover{
+  cursor: pointer;
+  background-color: rgb(227, 176, 249);
+  /* color: aliceblue; */
+}
+
+#hide_cross{
+color: red;
+width: fit-content;
+font-size: 1.2em;
+display: none;
+
+}
+
+#cross_div{
+  width: 100%;
+  /* border: 1px solid blue; */
+  /* border: 1px solid black; */
+}
+
+#hide_cross:hover{
+  color: brown;
+  cursor: pointer;
+}
+
+#forg_h2{
+  /* border: 2px solid gold; */
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  font-size:1.6em;
+  color: brown;
+}

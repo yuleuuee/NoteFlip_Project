@@ -1,0 +1,168 @@
+{% extends "base.html" %} {% block title %}Content Page{% endblock %} {% block
+head %}
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/content.css') }}"
+/>
+
+{% endblock %} {% block content%}
+<!--{{greeting}} : use this to make a greating to user acc to the current time-->
+<div class="welcome">
+  {% if user.notes|length == 0 %}
+  <h2>{{greeting}} {{user.first_name|title}}. Welcome! <i class="fa-regular fa-face-smile"></i></h2>
+  {% else %}
+  <h2>{{greeting}} {{user.first_name|title}}. Welcome back! <i class="fa-regular fa-face-smile"></i></h2>
+  {% endif %}
+  <span class="pic">{{user.first_name[0]|title}}</span>
+</div>
+
+<!-- ********************** ADD NOTES *************************-->
+
+<form class="main_form" method="POST">
+  <textarea
+    name="note"
+    id="note"
+    cols="40"
+    rows="2"
+    placeholder="Write Your Notes Here..."
+  ></textarea>
+  <div>
+    <button class="btn area" type="submit">Add Notes</button>
+  </div>
+</form>
+
+<!-- ********************** LOGIC  *************************-->
+{% if user.notes|length == 0 %} <!--gets only the notes of the current user from the database ( database ma vako particular 'user' ko  sabbai 'notes') -->
+<h3>Currently, there aren't any notes. Feel free to add!</h3>
+{% else %}
+
+<h2 class="all_note_h2">
+  Here are all of your notes. <i class="fa-solid fa-arrow-down"></i>
+</h2>
+
+<div class="note_container">
+  <div class="note_time_box today">
+    <h2>Your Todays Notes</h2>
+    <ul>
+      {% for note in user.notes[::-1] %} {% if note.date.date() == today_date %}
+      <li>
+        <div class="date_n_fun">
+          <span>{{ note.date.date() }} | {{ note.date.strftime('%A')}}</span>
+          <!--***************** DELETE NOTE *****************-->
+          <form action="/delete_note/{{note.id}}" method="GET">
+            <button id="del_btn" type="submit" onclick="return confirm('Are you sure about deleting this note?')">
+              <i class="fa-solid fa-trash"></i>Delete Note
+            </button>
+          </form>
+          <!--***************** UPDATE NOTE *****************-->
+          <a id="edit_btn" href="/update/{{note.id}}"
+            ><i class="fa-solid fa-pen-to-square"></i>Edit Note</a
+          >
+        </div>
+        <div class="note_part">
+          <div>{{ note.data}}</div>
+        </div>
+      </li>
+      {% endif %} {% endfor %}
+    </ul>
+  </div>
+
+  <div class="note_time_box  not_today">
+    <h2>Your Past Notes</h2>
+    <ul>
+      {% for note in user.notes[::-1] %} {% if note.date.date() != today_date %}
+      <li>
+        <div class="date_n_fun">
+          <span>{{ note.date.date() }} | {{ note.date.strftime('%A')}} </span>
+          <!--***************** DELETE NOTE *****************-->
+          <form action="/delete_note/{{note.id}}" method="GET">
+            <button id="del_btn" type="submit" onclick="return confirm('Are you sure about deleting this note?')"
+            >
+              <i class="fa-solid fa-trash"></i>Delete Note
+            </button>
+          </form>
+
+          <!--***************** UPDATE NOTE *****************-->
+          <a id="edit_btn" href="/update/{{note.id}}"
+            ><i class="fa-solid fa-pen-to-square"></i>Edit Note</a
+          >
+        </div>
+        <div class="note_part">
+          <div>{{ note.data}}<div>
+        </div>
+      </li>
+      {% endif %} {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% endif %}
+
+
+<!-- ********************** LAST DIV *************************-->
+<div class="last_div">
+  <div class="change">
+    <a id="change_pass_link"><i class="fa-solid fa-key"></i> Change Password</a>
+  </div>
+  <form
+    id="change_password"
+    method="POST"
+    action="/change_password"
+    autocomplete="off"
+  >
+    <div id="cross_div">
+      <i id="hide_cross" class="fa-solid fa-xmark"></i>
+    </div>
+    <label for="your_email"></label>
+    <h2 id="forg_h2">Modify Password</h2>
+    <input
+      list="e_sugg"
+      type="text"
+      class="your_email"
+      id="your_email"
+      name="your_email"
+      placeholder="Enter your Email"
+    />
+    <datalist id="e_sugg">
+      <option value="ross@gmail.com"></option>
+    </datalist>
+
+    <label for="change_pass"></label>
+    <input
+      type="password"
+      class="new_pass01"
+      id="new_pass01"
+      name="new_pass01"
+      placeholder="Enter new password"
+    />
+    <label for="forg_pass"></label>
+    <input
+      type="password"
+      class="new_pass02"
+      id="new_pass02"
+      name="new_pass02"
+      placeholder="Confirm new password"
+    />
+    <button type="submit" id="change_pass_btn">Save Change</button>
+  </form>
+  <!-- ******** DELETE ACCOUNT ************-->
+  <div>
+    <form action="/delete_account" method="POST">
+      <button
+        id="del_acc_btn"
+        type="submit"
+        onclick="return confirm('Are you sure about deleting your account? Please note that this action will remove all your Notes.')"
+      >
+      <i class="fa-solid fa-user-xmark"></i> Delete Account ?
+      </button>
+    </form>
+  </div>
+</div>
+<!-- ********************** JavaScript of CONTENT PAGE *************************-->
+<script
+  type="text/javascript"
+  src="{{url_for('static',filename='js/content.js')}}"
+
+></script>
+{% endblock %}

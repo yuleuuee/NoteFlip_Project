@@ -1,0 +1,101 @@
+/* ********************** UPDATE PAGE ************************* */
+
+
+
+body{
+    background-image: linear-gradient( 174.2deg,  rgba(255,244,228,1) 7.1%, rgba(240,246,238,1) 67.4% );
+}
+
+.welcome{
+    /* border: 2px solid blue; */
+    margin: 5px;
+    padding-left: 30px;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+}
+
+.pic{
+    /* border: 2px solid red; */
+    margin: 5px;
+    padding: 5px;
+    border-radius: 50%; 
+    font-weight: bold;
+    font-size: 2em;
+    width: 40px;
+    height: 40px;
+    text-align: center; /* Center the text horizontally */
+    line-height: 40px; /* Center the text vertically */
+    box-shadow: 0 0 10px 5px rgba(255, 123, 103, 0.5); 
+    float: right;
+
+}
+
+
+.edit_h2{
+    text-align: center;
+    color: rgb(140, 82, 5);
+}
+
+#update_form{
+    /* border: 2px solid red; */
+    /* width: 50%; */
+    padding: 10px;
+    margin: 10px;
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#editableTextarea{
+    margin: 10px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: transparent;
+    box-shadow: 0 0 10px 10px rgba(245, 214, 175, 0.5); 
+    outline: none;
+    font-size: 20px;
+
+}
+
+#editableTextarea:hover{
+    box-shadow: 0 0 10px 10px rgba(174, 238, 169, 0.5); 
+}
+
+
+#upd_btn{
+    margin: 10px 5px;
+    padding: 5px 10px;
+    border: 1px solid gainsboro;
+    /* width: 100%; */
+    height: 30px;
+    /* border-radius: 30px; */
+    font-size: 16px;
+    background-color: rgba(209, 153, 244, 0.5); 
+
+}
+
+#upd_btn:hover{
+    cursor: pointer;
+    background-color: rgb(248, 209, 221);
+}
+
+#img_div{
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_back{
+    width: 42%;
+}
+
+
+footer{
+    margin-top: 10px;
+}
+

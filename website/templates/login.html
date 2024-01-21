@@ -1,0 +1,102 @@
+{% extends "base.html" %} {% block title %} Login Page {% endblock %} {% block
+head %}
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/login.css') }}"
+/>
+{% endblock %} {% block content %}
+<section class="sec1">
+  <form
+    id="login_form"
+    name="form"
+    class="form"
+    autocomplete="off"
+    method="post"
+  >
+    <h2>Login</h2>
+    <div class="inp 01">
+      <label for="email"></label>
+      <input
+        list="em_sugg"
+        type="text"
+        class="email"
+        id="email"
+        name="email"
+        placeholder="E-mail"
+        value="{{returned_email if returned_email is not none else ''}}"
+      />
+      <datalist id="em_sugg">
+        <option value="yule@gmail.com"></option>
+        <option value="mint@gmail.com"></option>
+        <option value="ross@gmail.com"></option>
+      </datalist>
+    </div>
+    <div class="inp 02">
+      <label for="password"></label>
+      <input
+        type="password"
+        class="password"
+        id="password"
+        name="password"
+        placeholder="Password"
+      />
+    </div>
+    <div class="forgot">
+      <a id="forgot_link">Forgot Password ?</a>
+    </div>
+    <div class="submit">
+      <button type="submit" id="btn">Login</button>
+    </div>
+    <div class="go_signup">
+      <p>Don't have an account ? <a id="create" href="/signup"> Create</a></p>
+    </div>
+  </form>
+  <form
+    id="forgot_password"
+    method="POST"
+    action="/forgot_password"
+    autocomplete="off"
+  >
+    <div id="cross_div">
+      <i id="hide_cross" class="fa-solid fa-xmark"></i>
+    </div>
+    <label for="forg_email"></label>
+    <h2 id="forg_h2">Change Password</h2>
+    <input
+      list="e_sugg"
+      type="text"
+      class="forg_email"
+      id="forg_email"
+      name="forg_email"
+      placeholder="Enter your Email"
+    />
+    <datalist id="e_sugg">
+      <option value="ross@gmail.com"></option>
+    </datalist>
+
+    <label for="forg_pass"></label>
+    <input
+      type="password"
+      class="forg_pass01"
+      id="forg_pass01"
+      name="forg_pass01"
+      placeholder="Enter new password"
+    />
+    <label for="forg_pass"></label>
+    <input
+      type="password"
+      class="forg_pass02"
+      id="forg_pass02"
+      name="forg_pass02"
+      placeholder="Confirm new password"
+    />
+    <button type="submit" id="forg_btn">Save Change</button>
+  </form>
+</section>
+
+<script
+  type="text/javascript"
+  src="{{url_for('static',filename='js/login.js')}}"
+></script>
+{% endblock %}

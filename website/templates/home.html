@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoteFlip</title>
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='icon/note.png') }}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/home.css') }}"
+    />
+    <script
+      src="https://kit.fontawesome.com/84753a4e05.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <img
+        class="img_logo"
+        src="{{ url_for('static', filename='/icon/note.png') }}"
+        alt="logo"
+      />
+      <h1>NoteFlip</h1>
+      <div id="acc_del_msg">
+        {% if message %}
+        <!--if the message exists-->
+        <h3>
+          <i id="cross" class="fa-solid fa-xmark"></i> {{message}}
+          <i class="fa-solid fa-circle-check"></i>
+        </h3>
+        {% endif %}
+      </div>
+      <div class="side_nav">
+        <nav>
+          <ul>
+            <li>
+              <a href="#"><i class="fa-brands fa-stack-exchange"></i>Sayings</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-pagelines"></i>Quotes</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-heart-circle-check"></i>Best</a>
+            </li>
+          </ul>
+        </nav>
+        <span class="profile"
+          ><img
+            class="pic"
+            class="img_logo"
+            src="{{ url_for('static', filename='/icon/yule.jpg') }}"
+            alt="logo"
+        /></span>
+      </div>
+    </header>
+    <main>
+      <section class="wrapper01">
+        <div class="block b1">
+          <img
+            class="img_p"
+            src="{{ url_for('static', filename='/image/p01.png') }}"
+            alt="logo"
+          />
+        </div>
+        <div class="block b2">
+          <h2>Welcome to NoteFlip</h2>
+          <p>Your digital haven for managing thoughts with ease.</p>
+          <a href="/login" class="exp_btn">Explore Now</a>
+        </div>
+        <div class="block b3">
+          <img
+            class="img_p"
+            src="{{ url_for('static', filename='/image/p02.png') }}"
+            alt="logo"
+          />
+        </div>
+      </section>
+      <section class="wrapper02">
+        <div>
+          <img
+            class="note side"
+            src="{{ url_for('static', filename='/image/task01.png') }}"
+            alt="note01"
+          />
+        </div>
+        <div>
+          <img
+            class="note mid"
+            src="{{ url_for('static', filename='/image/note03.jpeg') }}"
+            alt="note02"
+          />
+        </div>
+        <div>
+          <img
+            class="note mid"
+            src="{{ url_for('static', filename='/image/note02.jpeg') }}"
+            alt="note03"
+          />
+        </div>
+        <div>
+          <img
+            class="note side"
+            src="{{ url_for('static', filename='/image/task00.jpeg') }}"
+            alt="note04"
+          />
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>
+        Connect with Designer ( PRABHAV GAUTAM )
+        <span
+          ><a href="https://www.instagram.com/im_prabhav/" target="_blank"
+            ><i class="fa-brands fa-instagram b_icon"></i></a
+          ><a href="#"><i class="fa-brands fa-weixin b_icon"></i></a
+          ><a href="#"><i class="fa-brands fa-threads b_icon"></i></a
+        ></span>
+      </p>
+      <p>&copy; 2023 Yule's NoteFlip</p>
+    </footer>
+    <script
+      type="text/javascript"
+      src="{{url_for('static',filename='js/home.js')}}"
+    ></script>
+  </body>
+</html>

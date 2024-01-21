@@ -1,0 +1,372 @@
+
+.welcome{
+    /* border: 2px solid blue; */
+    margin: 5px;
+    padding-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.all_note_h2{
+    border-bottom: 2px solid blue;
+    margin: 10px;
+    padding: 5px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.pic{
+    /* border: 2px solid red; */
+    margin: 5px;
+    padding: 5px;
+    border-radius: 50%; 
+    font-weight: bold;
+    font-size: 2em;
+    width: 40px;
+    height: 40px;
+    text-align: center; /* Center the text horizontally */
+    line-height: 40px; /* Center the text vertically */
+    box-shadow: 0 0 10px 5px rgba(255, 123, 103, 0.5); 
+
+}
+
+.main_form{
+    /* border: 2px solid black; */
+    margin: 5px;
+    padding: 10px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+textarea{
+    margin: 10px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: transparent;
+    box-shadow: 0 0 10px 5px rgba(175, 209, 245, 0.5); 
+    outline: none;
+}
+
+textarea:hover{
+    box-shadow: 0 0 10px 5px rgba(238, 169, 209, 0.5); 
+}
+
+
+.btn{
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid gainsboro;
+    width: 100%;
+    height: 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    background-color: rgba(153, 221, 244, 0.5); 
+
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: rgb(243, 248, 209);
+}
+
+h3{
+    border-bottom: 2px solid blue;
+    margin: 5px;
+    padding: 5px;
+}
+
+.note_container{
+    border-top: 2px solid red;
+    margin: 10px;
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    flex-wrap: wrap;
+}
+
+
+/* ********** Two PART Acc to DATE ********** */
+
+.note_container .note_time_box  {
+    border-left: 2px solid red;
+    border-right: 2px solid red;
+    border-radius: 30px;
+    margin: 20px;
+    padding: 5px;
+    width: 35%;
+    
+}
+
+.not_today{
+    flex: 2;
+}
+
+.note_time_box  h2{
+    text-align: center;
+}
+
+
+.note_time_box  ul {
+    /* border: 2px solid green; */
+    margin: 5px;
+    padding: 5px;
+}
+
+
+
+
+.note_time_box  ul li{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap:wrap; 
+}
+
+.note_time_box li>div{
+    /* border: 1px solid red; */
+    margin: 5px;
+    padding: 5px;
+}
+
+
+.note_time_box ul li:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 10px 2px rgb(77, 120, 248);
+
+}
+
+
+
+
+/*********** two note part ********* */
+
+.date_n_fun {
+    border-right: 5px double black;
+    width: 200px;
+    margin: 5px;
+    padding: 10px;
+
+}
+
+.note_part{
+    /* border: 3px double black; */
+    width: 200px;
+    margin: 5px;
+    padding: 5px;
+}
+
+/* ************************************ */
+
+/* .today ul li{
+    width: 350px;
+} */
+
+/* .not_today ul li{
+    filter: blur(3px);
+} */
+
+.not_today ul li:hover{
+    filter: none;
+    cursor: pointer;
+}
+
+/* <!--***************** DELETE NOTE *****************--> */
+
+#del_btn{
+    margin: 10px 5px 5px 10px;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: rgba(232, 196, 251, 0.5); 
+}
+
+/* <!--***************** UPDATE NOTE *****************--> */
+
+#edit_btn{
+    margin: 10px 5px 5px 10px;
+    padding: 4px 12px;
+    border: 1px solid black;
+    border-radius: 30px;
+    font-size: 15.5px;
+    font-weight: bold;
+    background-color: rgba(232, 196, 251, 0.5); 
+}
+
+
+#del_btn:hover , #edit_btn:hover{
+    cursor: pointer;
+    background-color: rgba(247, 231, 160, 0.5); 
+}
+/* <!-- ********************** Last Div ACCOUNT *************************--> */
+.last_div{
+    /* border: 2px solid green; */
+    /* margin: 10px; */
+    padding: 5px;
+    display: flex;
+    margin: 5px 10px;
+    /* justify-content: space-between;
+    align-items: center; */
+
+    justify-content: space-between;
+    align-items:first baseline;
+}
+
+.last_div div{
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    justify-content:space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+
+#del_acc_btn{
+    /* margin: 10px 5px 5px 10px; */
+    padding: 5px 20px;
+    border: 2px solid black;
+    border-radius: 30px;
+    background-color: rgba(250, 115, 115, 0.5); 
+    color: black;
+    font-size: 15px;
+    
+}
+
+#del_acc_btn:hover{
+    cursor: pointer;
+    background-color: rgb(105, 93, 219); 
+    color: white;
+}
+
+#del_acc_btn:hover .fa-user-xmark{
+    color: white;
+}
+
+
+/* ***************** Forgot password *************** */
+
+#change_pass_link{
+    color: black;
+    border: 2px solid black;
+    padding: 4px 15px;
+    /* margin-top: 20px; */
+    border-radius: 20px;
+    background-color: rgba(149, 250, 115, 0.5); 
+}
+
+#change_pass_link:hover , #change_pass_link i:hover{
+    color: white;
+    cursor: pointer;
+    background-color: rgb(105, 93, 219); 
+}
+
+#change_pass_link:hover .fa-key {
+    color: white;
+}
+
+
+/* .change_password{
+    border: 2px solid blue ;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items:first baseline;
+    flex-wrap: wrap;
+} */
+
+#change_password{
+    width: 30%;
+    display: none;
+    padding-bottom: 20px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 50px 20px rgba(191, 224, 25, 0.2);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+  }
+  
+  #new_pass01,#new_pass02, #your_email{
+    width: 60%;
+      height: 35px;
+      font-size: 13px;
+      text-align: left;
+      padding:18px;
+      margin: 10px;
+      box-shadow: 0px 0px 5px 5px rgba(180, 169, 14, 0.2);
+      border-radius: 30px;
+      border: transparent;
+      background-color: transparent;
+      color: black;
+      outline:none;
+  }
+
+  
+  #change_pass_btn{
+    border: transparent;
+    width: 40%;
+    height: 30px;
+    background-color: rgb(201, 235, 190);
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    color: black;
+  }
+  
+  #change_pass_btn:hover{
+    cursor: pointer;
+    background-color: rgb(188, 249, 176);
+    /* color: aliceblue; */
+  }
+  
+  #hide_cross{
+  color: red;
+  width: fit-content;
+  font-size: 1.2em;
+  display: none;
+  
+  }
+  
+  #cross_div{
+    width: 95%;
+    /* border: 1px solid black; */
+  }
+  
+  #hide_cross:hover{
+    color: brown;
+    cursor: pointer;
+  }
+  
+  #forg_h2{
+    /* border: 2px solid gold; */
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    font-size:1.6em;
+    color: rgb(120, 165, 42);
+  }
+
+  /* .change{
+    float: right;
+    margin-right: 20px;
+  } */
+
+/* footer */
+footer{
+    margin-top: 5px;
+}
+
+

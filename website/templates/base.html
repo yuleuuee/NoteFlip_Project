@@ -1,0 +1,94 @@
+<!DOCTYPE >
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Base Page{% endblock %}</title>
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='icon/note.png') }}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/base.css') }}"
+    />
+    <script
+      src="https://kit.fontawesome.com/84753a4e05.js"
+      crossorigin="anonymous"
+    ></script>
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="/"
+          ><img
+            class="img_logo"
+            src="{{ url_for('static', filename='/icon/note.png') }}"
+            alt="logo"
+          />
+          <h1>NoteFlip</h1></a
+        >
+      </div>
+
+      <div class="side_nav">
+        <nav>
+          <ul class="nav_ul">
+            {# if the user is logged in ,then only...#} 
+            {% if user.is_authenticated %}
+            <li>
+              <a href="/content"><i class="fa fa-newspaper navi"></i>Content</a>
+            </li>
+            <li>
+              <a id="log_out" href="/logout"
+                ><i class="fa-solid fa-right-from-bracket navi"></i>Logout</a
+              >
+            </li>
+            {% else %}
+            <li>
+              <a href="/"><i class="fa-solid fa-house navi"></i>Home</a>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div id="notify_msg">
+        {# Flask message for ERROR and SUCCESS happens : #} {% with messages =
+        get_flashed_messages(with_categories=true) %} {% if messages %} {% for
+        category, message in messages %} {% if category == 'error' %}
+        <div class="error mess">
+          <i id="er_msg" class="fa-solid fa-xmark"></i>
+          {{ message }} <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+
+        {% else %} {# Alert: Success #}
+        <div class="succ mess">
+          <i id="su_msg" class="fa-solid fa-xmark"></i>
+          {{ message }} <i class="fa-solid fa-circle-check"></i>
+        </div>
+
+        {% endif %} {% endfor %} {% endif %} {% endwith %}
+      </div>
+      {% block content %}{% endblock %}
+    </main>
+    <footer>
+      <p>
+        Connect with Designer ( PRABHAV GAUTAM )
+        <span
+          ><a href="https://www.instagram.com/im_prabhav/" target="_blank"
+            ><i class="fa-brands fa-instagram icon"></i></a
+          ><a href="#"><i class="fa-brands fa-weixin icon"></i></a
+          ><a href="#"><i class="fa-brands fa-threads icon"></i></a
+        ></span>
+      </p>
+      <p>&copy; 2023 Yule's NoteFlip</p>
+    </footer>
+    <script
+      type="text/javascript"
+      src="{{url_for('static',filename='js/base.js')}}"
+    ></script>
+  </body>
+</html>
